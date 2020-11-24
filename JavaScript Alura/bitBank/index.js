@@ -1,12 +1,12 @@
 import {Cliente} from './Cliente.js';
-import {ContaCorrente} from './ContaCorrente.js';
+import { Gerente } from './Funcionario/Gerente.js';
+import { Diretor } from './Funcionario/Diretor';
+import { SistemaAutenticacao } from './SistemaAutenticação.js'
 
-// node --experimental-modules index.js
+//node --experimental-modules index.js
 
-const cliente1 = new Cliente("Ricardo",11122233309);
-const contaCorrenteRicardo = new ContaCorrente(1001,cliente1);
-contaCorrenteRicardo.depositar = 100;
+const diretor = new Diretor("Rodrigo",  1000 , 123456781 );
+diretor.cadastrarSenha("12345");
+const gerente = new Gerente("Tiago" , 5000, 124587531);
 
-
-
-console.log(contaCorrenteRicardo);
+//const estaLogado = SistemaAutenticacao.login(diretor,"12345");
